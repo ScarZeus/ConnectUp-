@@ -1,0 +1,66 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Page content */
+.page-content {
+    padding: 20px;
+    padding-bottom: 70px;
+    /* enough space for bottom nav */
+    flex: 1;
+}
+
+/* Navbar mobile: floating bottom */
+@media (max-width: 767px) {
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #1e1e2f;
+        z-index: 1000;
+    }
+
+    .navbar-links {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .navbar-links a {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* Navbar desktop: sidebar drawer */
+@media (min-width: 768px) {
+    .app-container {
+        flex-direction: row;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+    }
+
+    .navbar-links li {
+        margin-bottom: 10px;
+    }
+
+    .page-content {
+        margin-left: 200px;
+        /* same as navbar width */
+        padding-bottom: 20px;
+    }
+}

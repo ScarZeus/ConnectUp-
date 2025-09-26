@@ -1,5 +1,120 @@
-*{
-  box-sizing:border-box;
-  margin:0;
+/* ---------- Global Reset ---------- */
+* {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* ---------- App Container ---------- */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  /* soft vibrant gradient */
+  transition: background 0.3s ease;
+}
+
+/* ---------- Page Content ---------- */
+.page-content {
+  flex: 1;
+  padding: 2rem;
+  transition: margin-left 0.3s ease;
+  color: #1e1e2f;
+}
+
+/* ---------- Navbar Styles ---------- */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  border-radius: 20px 20px 0 0;
+  padding: 0.7rem 1.2rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: space-around;
+  z-index: 100;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.navbar:hover {
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* ---------- Navbar Links ---------- */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.navbar-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.navbar-links li a:hover,
+.navbar-links li a.active {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Desktop Sidebar / Drawer ---------- */
+@media screen and (min-width: 768px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 220px;
+    height: 100vh;
+    border-radius: 0;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    justify-content: flex-start;
+    background: linear-gradient(180deg, #ff6a00, #ee0979);
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .page-content {
+    margin-left: 220px;
+  }
+}
+
+/* ---------- Mobile Page Padding ---------- */
+@media screen and (max-width: 767px) {
+  .page-content {
+    padding-bottom: 100px;
+    /* space for floating navbar */
+  }
+}
+
+/* ---------- Headings ---------- */
+.page-content h1 {
+  font-size: 2.5rem;
+  color: #ff4e50;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.page-content p {
+  font-size: 1.2rem;
+  color: #333;
 }

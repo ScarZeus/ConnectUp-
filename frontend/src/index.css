@@ -39,36 +39,77 @@
   justify-content: space-around;
   z-index: 100;
   transition: background 0.3s ease, transform 0.3s ease;
+  list-style: none;
 }
 
-.navbar:hover {
+/* .navbar:hover {
   transform: translateX(-50%) translateY(-2px);
+} */
+
+/* ---------- Navbar Styles ---------- */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  border-radius: 20px 20px 0 0;
+  padding: 0.7rem 1.2rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: space-around;
+  z-index: 100;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-/* ---------- Navbar Links ---------- */
 .navbar-links {
   list-style: none;
+  /* remove bullets */
   display: flex;
   justify-content: space-around;
   width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-links li {
+  list-style: none;
+  /* extra safety */
 }
 
 .navbar-links li a {
-  color: white;
-  text-decoration: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 12px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
+  background: none;       /* Remove the box background */
+  backdrop-filter: none;  /* Remove blur effect */
+  border-radius: 0;       /* Remove rounded corners */
+  padding: 0;             /* Optional: reduce padding if needed */
+  color: white;           /* Keep text visible */
+  text-decoration: none;  /* Keep underline off */
+  font-weight: bold;      /* Keep text bold */
+  display: inline-block;  /* Just text, no flex box effect */
+  min-width: auto;        /* Remove fixed width */
+  text-align: center;
 }
 
-.navbar-links li a:hover,
-.navbar-links li a.active {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+.navbar-links li a:hover {
+  background: none;       /* Remove hover background */
+  transform: none;        /* Optional: remove scale on hover */
+  box-shadow: none;       /* Remove shadow */
+}
+
+
+/* Active underline */
+.navbar-links li a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background-color: #ff4e50;
+  border-radius: 2px;
 }
 
 /* ---------- Desktop Sidebar / Drawer ---------- */
@@ -90,7 +131,16 @@
 
   .navbar-links {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
+  }
+
+  .navbar-links li a {
+    width: 100%;
+    /* fill sidebar width */
+    padding: 1rem;
+    text-align: center;
+    /* center text inside the box */
+    background: rgba(255, 255, 255, 0.15);
   }
 
   .page-content {
@@ -98,15 +148,14 @@
   }
 }
 
-/* ---------- Mobile Page Padding ---------- */
+/* Mobile padding for content */
 @media screen and (max-width: 767px) {
   .page-content {
     padding-bottom: 100px;
-    /* space for floating navbar */
   }
 }
 
-/* ---------- Headings ---------- */
+
 .page-content h1 {
   font-size: 2.5rem;
   color: #ff4e50;

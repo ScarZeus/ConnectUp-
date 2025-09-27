@@ -10,8 +10,8 @@
 .app-container {
   display: flex;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-  /* soft vibrant gradient */
+  background: #131417; /* solid dark background */
+  background: linear-gradient(135deg, #131417, #2a2b2e); /* greyish shade */
   transition: background 0.3s ease;
 }
 
@@ -20,7 +20,21 @@
   flex: 1;
   padding: 2rem;
   transition: margin-left 0.3s ease;
-  color: #1e1e2f;
+  color: #1e90ff; /* Dodger Blue text */
+}
+
+/* Headings */
+.page-content h1 {
+  font-size: 2.5rem;
+  color: #1e90ff; /* Blue heading */
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.1); /* subtle glow */
+}
+
+/* Paragraphs */
+.page-content p {
+  font-size: 1.2rem;
+  color: #b0b0b0; /* grey text for readability */
 }
 
 /* ---------- Navbar Styles ---------- */
@@ -80,22 +94,32 @@
 }
 
 .navbar-links li a {
-  background: none;       /* Remove the box background */
-  backdrop-filter: none;  /* Remove blur effect */
-  border-radius: 0;       /* Remove rounded corners */
-  padding: 0;             /* Optional: reduce padding if needed */
-  color: white;           /* Keep text visible */
-  text-decoration: none;  /* Keep underline off */
-  font-weight: bold;      /* Keep text bold */
-  display: inline-block;  /* Just text, no flex box effect */
-  min-width: auto;        /* Remove fixed width */
+  backdrop-filter: none;
+  /* Remove blur effect */
+  border-radius: 0;
+  /* Remove rounded corners */
+  padding: 0;
+  /* Optional: reduce padding if needed */
+  color: white;
+  /* Keep text visible */
+  text-decoration: none;
+  /* Keep underline off */
+  font-weight: bold;
+  /* Keep text bold */
+  display: inline-block;
+  /* Just text, no flex box effect */
+  min-width: auto;
+  /* Remove fixed width */
   text-align: center;
 }
 
 .navbar-links li a:hover {
-  background: none;       /* Remove hover background */
-  transform: none;        /* Optional: remove scale on hover */
-  box-shadow: none;       /* Remove shadow */
+  background: none;
+  /* Remove hover background */
+  transform: none;
+  /* Optional: remove scale on hover */
+  box-shadow: none;
+  /* Remove shadow */
 }
 
 
@@ -139,8 +163,6 @@
     /* fill sidebar width */
     padding: 1rem;
     text-align: center;
-    /* center text inside the box */
-    background: rgba(255, 255, 255, 0.15);
   }
 
   .page-content {
@@ -156,14 +178,3 @@
 }
 
 
-.page-content h1 {
-  font-size: 2.5rem;
-  color: #ff4e50;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-}
-
-.page-content p {
-  font-size: 1.2rem;
-  color: #333;
-}

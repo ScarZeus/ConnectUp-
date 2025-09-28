@@ -10,8 +10,10 @@
 .app-container {
   display: flex;
   min-height: 100vh;
-  background: #131417; /* solid dark background */
-  background: linear-gradient(135deg, #131417, #2a2b2e); /* greyish shade */
+  background: #131417;
+  /* solid dark background */
+  background: linear-gradient(135deg, #131417, #2a2b2e);
+  /* greyish shade */
   transition: background 0.3s ease;
 }
 
@@ -20,63 +22,53 @@
   flex: 1;
   padding: 2rem;
   transition: margin-left 0.3s ease;
-  color: #1e90ff; /* Dodger Blue text */
+  color: #1e90ff;
+  /* Dodger Blue text */
 }
 
 /* Headings */
 .page-content h1 {
   font-size: 2.5rem;
-  color: #1e90ff; /* Blue heading */
+  color: #1e90ff;
+  /* Blue heading */
   margin-bottom: 1rem;
-  text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.1); /* subtle glow */
+  text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.1);
+  /* subtle glow */
 }
 
 /* Paragraphs */
 .page-content p {
   font-size: 1.2rem;
-  color: #b0b0b0; /* grey text for readability */
+  color: #b0b0b0;
+  /* grey text for readability */
 }
 
 /* ---------- Navbar Styles ---------- */
 .navbar {
   position: fixed;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  /* start from left edge */
+  width: 100vw;
+  /* full viewport width */
   background: linear-gradient(135deg, #ff6a00, #ee0979);
-  border-radius: 20px 20px 0 0;
-  padding: 0.7rem 1.2rem;
-  width: 90%;
-  max-width: 500px;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+  padding: 0.7rem 0;
+  /* optional horizontal padding */
   display: flex;
   justify-content: space-around;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
   z-index: 100;
   transition: background 0.3s ease, transform 0.3s ease;
   list-style: none;
 }
+
 
 /* .navbar:hover {
   transform: translateX(-50%) translateY(-2px);
 } */
 
 /* ---------- Navbar Styles ---------- */
-.navbar {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, #ff6a00, #ee0979);
-  border-radius: 20px 20px 0 0;
-  padding: 0.7rem 1.2rem;
-  width: 90%;
-  max-width: 500px;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: space-around;
-  z-index: 100;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
+
 
 .navbar-links {
   list-style: none;
@@ -176,5 +168,3 @@
     padding-bottom: 100px;
   }
 }
-
-

@@ -1,4 +1,3 @@
-/* ---------- Global Reset ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -6,73 +5,50 @@
   font-family: 'Arial', sans-serif;
 }
 
-/* ---------- App Container ---------- */
 .app-container {
   display: flex;
   min-height: 100vh;
-  background: #131417;
-  /* solid dark background */
   background: linear-gradient(135deg, #131417, #2a2b2e);
-  /* greyish shade */
   transition: background 0.3s ease;
 }
 
-/* ---------- Page Content ---------- */
 .page-content {
   flex: 1;
   padding: 2rem;
   transition: margin-left 0.3s ease;
   color: #1e90ff;
-  /* Dodger Blue text */
 }
 
-/* Headings */
 .page-content h1 {
   font-size: 2.5rem;
   color: #1e90ff;
-  /* Blue heading */
   margin-bottom: 1rem;
   text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.1);
-  /* subtle glow */
 }
 
-/* Paragraphs */
 .page-content p {
   font-size: 1.2rem;
   color: #b0b0b0;
-  /* grey text for readability */
 }
 
-/* ---------- Navbar Styles ---------- */
 .navbar {
   position: fixed;
   bottom: 0;
   left: 0;
-  /* start from left edge */
   width: 100vw;
-  /* full viewport width */
-  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  background: linear-gradient(180deg, #1c1c1c, #000000);
   padding: 0.7rem 0;
-  /* optional horizontal padding */
   display: flex;
   justify-content: space-around;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
   z-index: 100;
   transition: background 0.3s ease, transform 0.3s ease;
   list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
 }
-
-
-/* .navbar:hover {
-  transform: translateX(-50%) translateY(-2px);
-} */
-
-/* ---------- Navbar Styles ---------- */
-
 
 .navbar-links {
   list-style: none;
-  /* remove bullets */
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -82,40 +58,25 @@
 
 .navbar-links li {
   list-style: none;
-  /* extra safety */
 }
 
 .navbar-links li a {
   backdrop-filter: none;
-  /* Remove blur effect */
   border-radius: 0;
-  /* Remove rounded corners */
   padding: 0;
-  /* Optional: reduce padding if needed */
   color: white;
-  /* Keep text visible */
   text-decoration: none;
-  /* Keep underline off */
   font-weight: bold;
-  /* Keep text bold */
   display: inline-block;
-  /* Just text, no flex box effect */
   min-width: auto;
-  /* Remove fixed width */
   text-align: center;
 }
 
-.navbar-links li a:hover {
-  background: none;
-  /* Remove hover background */
-  transform: none;
-  /* Optional: remove scale on hover */
-  box-shadow: none;
-  /* Remove shadow */
+.navbar-links li a:active,
+.navbar-links li a.active {
+  color: #1e90ff;
 }
 
-
-/* Active underline */
 .navbar-links li a.active::after {
   content: "";
   position: absolute;
@@ -128,7 +89,6 @@
   border-radius: 2px;
 }
 
-/* ---------- Desktop Sidebar / Drawer ---------- */
 @media screen and (min-width: 768px) {
   .navbar {
     position: fixed;
@@ -141,8 +101,9 @@
     flex-direction: column;
     padding: 2rem 1.5rem;
     justify-content: flex-start;
-    background: linear-gradient(180deg, #ff6a00, #ee0979);
+    background: linear-gradient(180deg, #1c1c1c, #000000);
     box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.7);
   }
 
   .navbar-links {
@@ -152,7 +113,6 @@
 
   .navbar-links li a {
     width: 100%;
-    /* fill sidebar width */
     padding: 1rem;
     text-align: center;
   }
@@ -162,7 +122,6 @@
   }
 }
 
-/* Mobile padding for content */
 @media screen and (max-width: 767px) {
   .page-content {
     padding-bottom: 100px;

@@ -1,14 +1,22 @@
 import React from "react";
 import './index.css';
 import Navbar from "../../components/nav-bar";
+import SearchBar from "../../components/search-bar";
 
 const SearchPage = () => {
    return (
     <div className="app-container">
       <Navbar />
       <main className="page-content">
-        <h1>Search page</h1>
-        <p>Scroll content here. Navbar will stay at bottom on mobile.</p>
+        <SearchBar 
+          value="" 
+          onChange={() => {}} 
+          onSearch={() => {}} 
+        />
+        <div className="search-results">
+          <h2>Search Results</h2>
+          <p>No results found.</p>
+        </div>
       </main>
     </div>
   );

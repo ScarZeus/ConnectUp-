@@ -12,11 +12,10 @@ const SearchPage = () => {
   };
 
   const handleSearch = () => {
-    // TODO: hook up to real API or logic
     if (searchQuery.trim() === "") {
       setSearchResults([]);
     } else {
-      setSearchResults([`Result for "${searchQuery}"`]); // dummy result
+      setSearchResults([`Result for "${searchQuery}"`]);
     }
   };
 
@@ -35,11 +34,18 @@ const SearchPage = () => {
           {searchResults.length === 0 ? (
             <p>No results found.</p>
           ) : (
-            <ul>
-              {searchResults.map((res, i) => (
-                <li key={i}>{res}</li>
+            <div>
+              {chatRooms.map((room, index) => (
+                <ChatRoomTile
+                  key={index}
+                  roomName={room.roomName}
+                  lastMessage={room.lastMessage}
+                  timestamp={room.timestamp}
+                  unreadCount={room.unreadCount}
+                  onClick={() => alert(`Open ${room.roomName} chat`)}
+                />
               ))}
-            </ul>
+            </div>
           )}
         </div>
       </main>
